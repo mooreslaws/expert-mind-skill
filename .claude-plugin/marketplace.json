@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "expert-mind-skill",
+  "description": "Alexey Vorobey's experimental expert circle for Claude Code — a rotating set of 16 distilled mental models from named professionals (Eric Seufert, Andrew Chen, Elena Verna, …), auto-refreshing on cadence from LinkedIn, RSS, YouTube, podcasts.",
+  "owner": {
+    "name": "Alexey Vorobey",
+    "email": "mooreslaws@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "expert-mind-skill",
+      "source": "./",
+      "description": "Build and maintain Claude Skills representing your favourite experts' worldviews. 16 bundled skills on day one; add your own via /expert-mind-skill:init. Invoke any expert by name, by domain (\"mobile UA expert\"), or by group (\"growth experts\").",
+      "version": "0.2.0"
+    }
+  ]
+}

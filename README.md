@@ -26,9 +26,11 @@ experts via the wizard, or just install and use as-is.
 
 ## Install (3 commands)
 
+Inside Claude Code:
+
 ```bash
 # 1. Add the marketplace
-/plugin marketplace add github:<your-fork-or-source>/expert-mind-skill
+/plugin marketplace add github:mooreslaws/expert-mind-skill
 
 # 2. Install the plugin
 /plugin install expert-mind-skill@expert-mind-skill
