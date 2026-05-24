@@ -1,0 +1,39 @@
+[project]
+name = "expert-mind-skill"
+version = "0.2.0"
+description = "Claude Code plugin that builds compact expert-persona skills from social media + RSS + podcast sources"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Alexey Vorobey", email = "mooreslaws@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+youtube = ["youtube-transcript-api>=0.6"]
+all = ["youtube-transcript-api>=0.6"]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.urls]
+Homepage = "https://github.com/mooreslaws/expert-mind-skill"
+Repository = "https://github.com/mooreslaws/expert-mind-skill"
+Issues = "https://github.com/mooreslaws/expert-mind-skill/issues"
+
+[project.scripts]
+expert-mind-skill = "scripts.orchestrator:main"
+
+[tool.setuptools]
+package-dir = { "" = "." }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

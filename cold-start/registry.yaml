@@ -1,0 +1,379 @@
+eric-seufert:
+  name: Eric Seufert
+  role: Founder Mobile Dev Memo; mobile ad economics, ATT/attribution, AI distribution thesis
+  expertise:
+  - mobile_advertising
+  - attribution
+  - app_growth
+  - ad_economics
+  - AI_distribution
+  voice: 'Analytical, dense, historical/economic framing (Galbraith, Malthus).
+
+    Strong opinions backed by quoted prior writing.
+
+    Concrete dollar examples to anchor abstractions.
+
+    '
+  groups:
+  - marketing
+  - strategy
+  - ai
+  - mobile
+  recommended_sources:
+  - type: linkedin_apify
+    handle: ericseufert
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+  - type: x_apify
+    handle: eric_seufert
+    auth: APIFY_TOKEN
+    cost_note: ~$0.003/tweet
+  - type: youtube
+    channel: '@MobileDevMemo'
+    auth: none
+    cost_note: free
+elena-verna:
+  name: Elena Verna
+  role: Growth advisor (ex-SurveyMonkey, MongoDB, Miro); product-led growth specialist
+  expertise:
+  - product_led_growth
+  - growth_loops
+  - retention
+  - self_serve
+  voice: 'PLG zealot, framework-driven, contrarian on outbound.
+
+    Anti-vanity-metric; explicit about what doesn''t work.
+
+    '
+  groups:
+  - product
+  - growth
+  - marketing
+  - strategy
+  recommended_sources:
+  - type: linkedin_apify
+    handle: elenaverna
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+  - type: rss
+    url: https://elenaverna.substack.com/feed
+    auth: none
+    cost_note: free
+  - type: x_apify
+    handle: elenaverna
+    auth: APIFY_TOKEN
+    cost_note: ~$0.003/tweet
+andrew-chen:
+  name: Andrew Chen
+  role: GP at a16z; growth marketing thought leader
+  expertise:
+  - growth_marketing
+  - consumer_products
+  - metrics
+  - marketplace_dynamics
+  - network_effects
+  voice: 'Essay-writer, network-effects framing, classic Silicon Valley product playbooks.
+
+    Mixes own experience with synthesis of others'' work.
+
+    '
+  groups:
+  - growth
+  - marketing
+  - product
+  - strategy
+  recommended_sources:
+  - type: rss
+    url: https://andrewchen.com/feed/
+    auth: none
+    cost_note: free
+  - type: linkedin_apify
+    handle: andrewchen
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+  - type: x_apify
+    handle: andrewchen
+    auth: APIFY_TOKEN
+    cost_note: ~$0.003/tweet
+anish-acharya:
+  name: Anish Acharya
+  role: GP at a16z; consumer fintech & AI investor
+  expertise:
+  - consumer_fintech
+  - AI_applications
+  - venture_investing
+  voice: 'Thesis-driven investor takes, AI/consumer crossover.
+
+    Sharp one-liners that compress arguments.
+
+    '
+  groups:
+  - ai
+  - strategy
+  - finance
+  - product
+  recommended_sources:
+  - type: linkedin_apify
+    handle: anishacharya
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+  - type: x_apify
+    handle: illscience
+    auth: APIFY_TOKEN
+    cost_note: ~$0.003/tweet
+rory-odriscoll:
+  name: Rory O'Driscoll
+  role: Partner at Scale Venture Partners; recurring 20VC co-host
+  expertise:
+  - enterprise_SaaS
+  - growth_investing
+  - public_markets
+  - SaaS_economics
+  voice: 'SaaS veteran, fluent in multiples and financial math.
+
+    Dry humour; sharp counterpoints to hype.
+
+    Voice lives mostly in podcast appearances, less so on LinkedIn.
+
+    '
+  groups:
+  - finance
+  - strategy
+  - saas
+  recommended_sources:
+  - type: linkedin_apify
+    handle: roryodriscoll
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+  - type: rss
+    url: ''
+    auth: none
+    enabled: false
+    cost_note: free
+prestonr:
+  name: Preston Rutherford
+  role: Co-founder Chubbies; DTC brand builder
+  expertise:
+  - DTC_marketing
+  - brand
+  - incrementality
+  - brand_led_demand
+  voice: 'Brand-first contrarian, anti-direct-response purism.
+
+    Narrative-driven; argues against ROAS-only optimization.
+
+    '
+  groups:
+  - marketing
+  - brand
+  - dtc
+  - strategy
+  recommended_sources:
+  - type: linkedin_apify
+    handle: prestonr
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+marcusburke:
+  name: Marcus Burke
+  role: Mobile UA specialist; Meta Ads, value rules, signal engineering
+  expertise:
+  - paid_UA
+  - Meta_ads
+  - value_optimization
+  - signal_engineering
+  voice: 'Sharp tactical takes, Meta-platform specific.
+
+    Hands-on operator; comfortable with "this is the exact bid you should set".
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - paid_ua
+  recommended_sources:
+  - type: linkedin_apify
+    handle: marcusburke
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+jacob-rushfinn:
+  name: Jacob Rushfinn
+  role: Mobile growth / user acquisition operator
+  expertise:
+  - paid_UA
+  - creatives
+  - mobile_attribution
+  voice: 'Hands-on operator perspective. Specific tactics over abstract frameworks.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - paid_ua
+  recommended_sources:
+  - type: linkedin_apify
+    handle: jacob-rushfinn
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+janvoss93:
+  name: Jan Voss
+  role: Mobile growth marketer
+  expertise:
+  - paid_UA
+  - ASO
+  - creative_strategy
+  voice: 'Tactical, screenshot-driven, real numbers.
+
+    Walks through screenshots of ad accounts and creatives.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - paid_ua
+  recommended_sources:
+  - type: linkedin_apify
+    handle: janvoss93
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+dangjr:
+  name: Dan G Jr
+  role: Mobile growth practitioner
+  expertise:
+  - mobile_growth
+  - paid_UA
+  voice: 'Operator-style; tests and learnings shared from the trenches.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - paid_ua
+  recommended_sources:
+  - type: linkedin_apify
+    handle: dangjr
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+sylvaingauchet:
+  name: Sylvain Gauchet
+  role: Growth Gems Chief Insights Miner; mobile growth advisor
+  expertise:
+  - mobile_growth_synthesis
+  - creative_strategy
+  - monetization
+  - PR
+  voice: 'Curatorial, framework-oriented; picks principles from peers and extends them.
+
+    Mostly synthesizes others'' work — primary value is the curation lens.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - growth
+  recommended_sources:
+  - type: rss
+    url: https://growthgems.substack.com/feed
+    auth: none
+    cost_note: free
+  - type: linkedin_apify
+    handle: sylvaingauchet
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+fazlurshah:
+  name: Fazlur Shah
+  role: Mobile growth practitioner
+  expertise:
+  - mobile_growth
+  - subscription_apps
+  - paid_UA
+  - ASO
+  voice: 'Practical, data-driven, tactical. Case-study heavy.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - paid_ua
+  recommended_sources:
+  - type: linkedin_apify
+    handle: fazlurshah
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+dawidprokopowicz:
+  name: Dawid Prokopowicz
+  role: Mobile growth practitioner
+  expertise:
+  - mobile_growth
+  - paid_UA
+  voice: 'Operator perspective; tactical insights from day-to-day campaign management.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - paid_ua
+  recommended_sources:
+  - type: linkedin_apify
+    handle: dawidprokopowicz
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+vkalmykov:
+  name: V. Kalmykov
+  role: Mobile growth practitioner
+  expertise:
+  - mobile_growth
+  voice: 'Operator perspective; experiments and learnings.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  recommended_sources:
+  - type: linkedin_apify
+    handle: vkalmykov
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+mikolajbarczentewicz:
+  name: Mikolaj Barczentewicz
+  role: Mobile growth / product
+  expertise:
+  - mobile_growth
+  - product
+  voice: 'Operator perspective; mixes growth tactics with product thinking.
+
+    '
+  groups:
+  - marketing
+  - mobile
+  - product
+  recommended_sources:
+  - type: linkedin_apify
+    handle: mikolajbarczentewicz
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+toddgardner1:
+  name: Todd Gardner
+  role: Founder Request Metrics (ex-TrackJS); bootstrapped SaaS operator, dev-tools marketing
+  expertise:
+  - bootstrapped_saas
+  - dev_tools_marketing
+  - indie_hacking
+  - saas_sales
+  - developer_marketing
+  voice: 'Bootstrapper-operator voice. Tactical, no-fluff, often contrarian to VC playbook.
+
+    Specific examples from running Request Metrics / TrackJS. Skeptical of growth-hacking trends.
+
+    Frames advice around what actually moves the needle for a small-team SaaS.
+
+    '
+  groups:
+  - marketing
+  - saas
+  - strategy
+  - sales
+  recommended_sources:
+  - type: linkedin_apify
+    handle: toddgardner1
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post

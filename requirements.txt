@@ -1,0 +1,9 @@
+# Core
+pyyaml>=6.0
+
+# YouTube transcripts — without it, pull_youtube saves metadata-only
+youtube-transcript-api>=0.6
+
+# Dev
+# pytest>=7
+# ruff>=0.4

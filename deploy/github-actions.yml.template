@@ -1,0 +1,48 @@
+# Drop-in GitHub Actions workflow for expert-mind-skill weekly refresh.
+#
+# Copy this file to: .github/workflows/expert-mind-skill.yml in your repo.
+#
+# Secrets needed (Settings -> Secrets and variables -> Actions):
+#   ANTHROPIC_API_KEY    — judge LLM
+#   APIFY_TOKEN          — only if you have linkedin_apify / x_apify sources
+#   READWISE_TOKEN       — only if you use Readwise adapters
+#
+# Schedule defaults to Monday 06:00 UTC. Adjust the cron string for your cadence.
+
+name: expert-mind-skill
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+  workflow_dispatch:       # manual trigger via Actions tab
+
+permissions:
+  contents: write           # needed to commit refreshed skills back to repo
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
+        run: python scripts/orchestrator.py
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: weekly skill refresh"
+          file_pattern: "skills/**/*.md output/**/*.md logs/**/*.jsonl"

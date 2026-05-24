@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'MARKER=\"$HOME/.config/expert-mind-skill/.welcome-shown\"; mkdir -p \"$(dirname \"$MARKER\")\" 2>/dev/null; if [ ! -f \"$MARKER\" ]; then touch \"$MARKER\"; echo \"{\\\"systemMessage\\\": \\\"💡 Expert Mind Skill installed: 15 expert lenses ready. Try mentioning marketing/product/AI experts in your question — they activate automatically. Run /expert-mind-skill:init to add your own or refresh existing.\\\"}\"; fi'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

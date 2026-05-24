@@ -1,0 +1,10 @@
+{
+  "name": "expert-mind-skill",
+  "description": "Build and maintain Claude Skills representing your favourite experts' worldviews. Scrapes LinkedIn (Apify), RSS, podcast snips, and other sources you configure; judges each excerpt for signal vs noise; distills into compact Claude Skills with frameworks, principles, and voice samples. Invoke via /expert-mind-skill:init, :add-persona, :status, :run.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Alexey Vorobey",
+    "email": "mooreslaws@gmail.com"
+  },
+  "license": "MIT"
+}
