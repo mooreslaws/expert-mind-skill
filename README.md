@@ -1,53 +1,149 @@
 # Expert Mind Skill
 
-> **Alexey Vorobey's experimental expert circle for Claude Code.**
-> A rotating set of 16 named professionals (Eric Seufert, Andrew Chen,
-> Elena Verna, …) distilled into compact mental models. The circle is
-> **always growing** — new experts are added when the work warrants it,
-> and existing skills auto-refresh on cadence as sources publish new material.
+> **A rotating circle of 16 named experts living inside your Claude Code.**
+> Mention an expert by name, by domain, or by group — Claude answers through
+> their frameworks, principles, and voice. Auto-refreshes weekly from
+> LinkedIn, RSS, YouTube, podcasts.
 
-Three ways to activate:
-
+```mermaid
+flowchart LR
+    U["Your question<br/>in Claude Code"] --> R{How you frame it}
+    R -->|"Use Eric Seufert..."| N["1 expert<br/>(by name)"]
+    R -->|"mobile UA experts..."| D["2-4 experts<br/>(by domain)"]
+    R -->|"growth experts lens..."| G["2-3 experts<br/>(by group)"]
+    N --> C["Claude responds<br/>through that lens"]
+    D --> C
+    G --> C
+    style C fill:#d4f1d4
 ```
-> "Use Eric Seufert — what's your take on cohort financing for mobile apps?"
-  → loads eric-seufert lens
-
-> "What do mobile UA experts think about Apple Search Ads in 2026?"
-  → loads eric-seufert + jacob-rushfinn + janvoss93 lenses
-
-> "Through the lens of growth experts — should we launch a referral program?"
-  → loads elena-verna + andrew-chen lenses
-```
-
-The circle ships installable on day one — fork to make it yours, add your own
-experts via the wizard, or just install and use as-is.
 
 ---
 
-## Install (3 commands)
+## Why this exists
 
-Inside Claude Code:
+You follow great operators on LinkedIn, podcasts, Substack. Their frameworks
+shape how you think. But when you actually need one of those frameworks — at
+midnight, mid-decision, in a meeting — **you don't have their voices in your
+head. You have their posts in a tab you never reopened.**
+
+The information is accessible. The recall is not. This plugin fixes the
+recall layer: it summons distilled expert thinking on demand, in the
+expert's actual voice, with their frameworks intact.
+
+---
+
+## What you can do with it
+
+### 1. Decision support before commitment
+
+> *"Use Rory O'Driscoll — at our ARR, is now the right time to raise Series B,
+> or should we focus on Rule of 40 for two more quarters?"*
+
+Get a structured answer through a SaaS-VC's framework before the board meeting,
+not after.
+
+### 2. Borrow expert framing for your own writing
+
+> *"I'm drafting a memo on cohort financing for mobile apps. Use Eric Seufert's
+> framing — economic-historical, with concrete dollar examples."*
+
+The skill includes voice samples — characteristic phrasing, not just topics.
+
+### 3. Multi-perspective without scheduling four calls
+
+> *"Give me 3 expert perspectives on whether to launch a referral program —
+> growth lens, brand lens, monetization lens."*
+
+Activates three different personas in parallel. Each answers in their own
+section, no synthesis.
+
+### 4. Stay current without doomscrolling
+
+The weekly cron pulls fresh content automatically. **You don't need to
+remember to read.** New frameworks from your tracked experts land in
+the skill, ready to invoke.
+
+### 5. Use as a research starter
+
+> *"Before I write my position paper on AI in advertising — what do Eric
+> Seufert, Andrew Chen, and Andrej Karpathy think about this space?"*
+
+Three lenses in one prompt. You write the paper; the experts surface
+relevant prior thinking.
+
+---
+
+## Who it's for
+
+- **Founders & investors** making strategic decisions in mobile apps, B2B
+  SaaS, growth, monetization
+- **Operators & PMs** at growth-stage companies who want senior frameworks
+  without senior salaries
+- **Builders** who follow named thinkers but suffer from "I read this and
+  I know it's relevant but I can't remember the specifics"
+- **Forkers** who want to bundle their own expert circle (different domain,
+  different language, different sources)
+
+---
+
+## Two install paths
+
+### Path A — Just use the 16 bundled experts (zero config)
 
 ```bash
-# 1. Add the marketplace
+# Inside Claude Code
 /plugin marketplace add github:mooreslaws/expert-mind-skill
-
-# 2. Install the plugin
 /plugin install expert-mind-skill@expert-mind-skill
+```
 
-# 3. (Optional) Run the setup wizard
+Done. All 16 experts are now active. **No API keys, no setup, no coding.**
+Mention any of them and they activate.
+
+### Path B — Add your own experts (interactive wizard)
+
+```bash
 /expert-mind-skill:init
 ```
 
-After step 2, all 16 bundled skills are available. The wizard in step 3 is
-only needed if you want to **add new authors** or **refresh existing ones
-with your own data sources**.
+A guided dialog walks you through everything. **No coding required.** The
+wizard asks plain questions:
+
+```
+✅ LLM provider configured? (if not, paste an Anthropic API key)
+✅ Which experts to add? (pick from 16 presets, or define your own)
+✅ Which sources to pull from? (LinkedIn, RSS, X, YouTube, podcasts, …)
+✅ Setup auto-refresh? (weekly cron, manual, or "just ping me in chat")
+✅ Run the pipeline now?
+```
+
+You can exit anytime — every step is optional. Re-run `init` later to
+continue where you left off. Filesystem-driven: the wizard inspects what
+you already have configured and only asks what's missing.
 
 ---
 
-## What's in the box
+## How to invoke an expert (3 patterns)
 
-16 ready-to-use skills, each ~2-3k tokens with frameworks + principles + voice samples:
+| Pattern | Example | Activates |
+|---|---|---|
+| **By name** | *"Use Eric Seufert — what's your take on cohort financing?"* | Exactly 1 expert |
+| **By domain** | *"What do mobile UA experts think about Apple Search Ads?"* | 2-4 experts matching the domain |
+| **By group** | *"Through growth experts lens — should we launch referral?"* | All experts in that group |
+
+Available groups: `marketing`, `product`, `strategy`, `ai`, `finance`,
+`leadership`, `design`, `sales`. Each expert is tagged with 1-3 groups.
+
+**For parallel side-by-side answers** (no synthesis), say so explicitly:
+
+> *"Give me 3 separate expert perspectives on X — don't synthesize, let each
+> answer in their own section."*
+
+---
+
+## What's in the box (16 bundled experts)
+
+Each skill: ~2-3k tokens of frameworks + principles + opinions + voice samples,
+distilled from 80-120 LinkedIn/RSS/YouTube items per author.
 
 | ID | Persona | Domain |
 |---|---|---|
@@ -68,177 +164,131 @@ with your own data sources**.
 | `vkalmykov` | V. Kalmykov | Mobile growth |
 | `mikolajbarczentewicz` | Mikolaj Barczentewicz | Mobile growth + product |
 
----
-
-## How to invoke an expert
-
-Three patterns — pick whichever fits how you're thinking.
-
-### 1. By name (single expert)
-
-> "Use Eric Seufert — what's your take on cohort financing?"
-
-Loads exactly one persona (`eric-seufert`). Claude responds through their
-frameworks, principles, and voice samples.
-
-### 2. By domain / expertise (2-4 experts)
-
-> "What do **mobile UA experts** think about Apple Search Ads in 2026?"
-> "Through the **subscription economics** lens, is freemium-first or trial-first better?"
-
-Activates every persona whose `expertise` tags match the domain. The judge's
-description triggers do the routing — no manual list needed.
-
-### 3. By group (a thematic cluster)
-
-> "Through the lens of **growth experts** — should we launch a referral program?"
-> "What would **marketing experts** say about this positioning?"
-
-Available groups: `marketing`, `product`, `strategy`, `ai`, `finance`,
-`leadership`, `design`, `sales`. Each persona is tagged with 1-3 groups in
-their YAML.
-
-### Asking for parallel responses
-
-The patterns above route context to my single answer (I synthesize). To get
-genuinely **parallel, side-by-side** voices, ask explicitly:
-
-> "Give me **3 expert perspectives** on X — each in their own section."
-> "Don't synthesize — let each expert answer separately."
+Quality report: [output/EVALUATION_REPORT.md](output/EVALUATION_REPORT.md)
+(16/16 with usable applicability, avg 2,503 tokens, 0 fair-applicability).
 
 ---
 
-## Adding your own expert
+# Technical description
 
-Run `/expert-mind-skill:init` (or `/expert-mind-skill:add-persona` once
-already set up). The wizard asks:
+Everything below is for people who want to **fork**, **add their own experts
+via config files**, or **understand how the pipeline produces a skill**.
+Skip if you just want to use the bundled set.
 
-1. **Identity** — name, role, voice description, expertise tags
-2. **Groups** — for activation by category ("strategy experts", "ai experts")
-3. **Sources** — attach as many as you want, any combination:
+## How the pipeline works
 
-### Supported source types
+```mermaid
+flowchart TD
+    S1[LinkedIn]:::src --> A[Adapters<br/>scripts/scrape_*.py]
+    S2[RSS / Substack]:::src --> A
+    S3[YouTube]:::src --> A
+    S4[Podcasts]:::src --> A
+    S5[X / Telegram / Readwise]:::src --> A
+    S6[IMAP / Manual text]:::src --> A
 
-All adapters below are **implemented**. Each is a single Python file in
-`scripts/` — see `CONTRIBUTING.md` to add a new one.
+    A --> B[(Raw content<br/>staging/raw/)]
+    B --> J{LLM Judge<br/>scripts/judge.py}
+
+    J -->|score < 0.7<br/>noise / news / promo| X[Discarded]
+    J -->|score ≥ 0.7<br/>framework / principle / opinion| E[(Accepted excerpts<br/>staging/scored/)]
+
+    E --> D[Distill<br/>scripts/distill.py]
+    D -->|dedup + voice extraction| O[(SKILL.md ~3k tokens<br/>skills/&lt;id&gt;/SKILL.md)]
+
+    O --> CC[Claude Code<br/>skill loader]
+    CC --> R[Activates when you<br/>mention the expert]
+
+    classDef src fill:#e3f2fd,stroke:#1976d2
+    style J fill:#fff3cd
+    style D fill:#fff3cd
+    style R fill:#d4f1d4
+```
+
+**Every cadence cycle** (default: weekly):
+
+1. **Ingest** — each enabled source adapter pulls latest content. RSS gets new
+   posts since last sync; LinkedIn pulls last 100 posts via Apify; etc.
+2. **Judge** — Claude scores each excerpt 0-1. Calibrated against
+   [calibration_seed.md](calibration_seed.md) (50 labeled examples). Items
+   ≥0.7 are kept. Errors surface loudly as `⚠️ ERRORS=N` in the run summary.
+3. **Distill** — accepted items bucketed by type (framework / principle /
+   opinion / voice sample), deduplicated semantically, written to a compact
+   `SKILL.md` (target: 2-4k tokens, hard cap: 8k).
+4. **Auto-refresh** — skills update in place. Manual edits between
+   `<!-- BEGIN AUTO -->` markers are preserved.
+
+Pre-flight checks before any expensive call: Apify and Anthropic are pinged
+for auth + balance. Aborts in <1 second if 402/credit-low. No wasted spend
+on misconfigured runs.
+
+---
+
+## Source adapters
+
+All 12 adapters are **implemented**. Each is a single Python file in `scripts/`.
 
 | Type | Auth | Cost | Notes |
 |---|---|---|---|
 | `rss` | none | free | Any RSS or Atom feed (Substack, WordPress, Ghost) |
 | `linkedin_apify` | `APIFY_TOKEN` | ~$0.002/post | **Only viable path for LinkedIn** — no public API exists |
 | `x_apify` | `APIFY_TOKEN` | ~$0.003/tweet | X/Twitter via Apify (recommended — cheap, no monthly fee) |
-| `x_official` | `X_BEARER_TOKEN` | $100/mo Basic tier | X API v2 — for users who already pay for Basic+ tier. Free tier blocks reading others' tweets |
-| `youtube` | none | free | Public videos via channel RSS + transcripts via scraping. No API key needed; install `pip install youtube-transcript-api` for richer transcript content |
-| `telegram_public` | none | free | Public TG channels via `t.me/s/` HTML scrape, no API needed |
+| `x_official` | `X_BEARER_TOKEN` | $100/mo Basic tier | X API v2 — only if you already pay for Basic+ tier |
+| `youtube` | none | free | Public videos via channel RSS + `youtube-transcript-api` |
+| `telegram_public` | none | free | Public TG channels via `t.me/s/` HTML scrape |
 | `mastodon` | none | free | Public Mastodon timelines |
 | `bluesky` | none | free | Public Bluesky feeds |
 | `readwise_reader` | `READWISE_TOKEN` | $8/mo subscription | Your saved Reader articles, filtered by tag |
 | `email_forward` | `IMAP_HOST` + `IMAP_USER` + `IMAP_PASS` | free | IMAP folder of forwarded newsletters |
 | `webfeed` | none | free | Single web URL → plain text (naive readability) |
-| `manual_text` | none | free | Drop `.txt` files in `staging/raw/manual/<persona_id>/` — adapter consolidates them |
+| `manual_text` | none | free | Drop `.txt` files in `staging/raw/manual/<persona_id>/` |
 
-**Planned for v1.2** (contributions welcome — see CONTRIBUTING.md):
-`reddit_user`, `hackernews`, `arxiv`, `readwise_highlights`, podcast RSS with Whisper transcription, Farcaster.
-
-Get keys at:
+Get API keys at:
 - Anthropic: <https://console.anthropic.com/settings/keys>
 - Apify: <https://apify.com/sign-up> → Settings → Integrations → API token
 - Readwise: <https://readwise.io/access_token>
-- Telegram: <https://my.telegram.org/apps>
 
----
-
-## How the pipeline works
-
-Every cadence cycle (default: weekly):
-
-1. **Ingest** — pulls latest content from each persona's enabled sources
-2. **Judge** — Claude scores each excerpt 0-1: is this a reusable principle,
-   or just news/noise? Only items ≥0.7 are kept.
-3. **Distill** — accepted items are bucketed by type (framework / principle /
-   opinion / voice sample), deduplicated semantically, and written to a
-   compact `SKILL.md` (target: 2-4k tokens, hard cap: 8k).
-4. **Commit** — `git add output/skills/ && git commit` (when running in CI)
-
-Skills auto-update without overwriting your manual edits — manual changes
-between markers are preserved, only the auto-generated sections refresh.
-
----
-
-## How to write a good persona passport
-
-Quality of the skill depends on quality of metadata. Three rules:
-
-### Rule 1 — Voice description is the judge's filter
-
-The `voice` field in `personas/<id>.yaml` is what the judge uses to recognise
-"this excerpt sounds like our author" vs "this is generic noise".
-
-**Bad** — generic:
-```yaml
-voice: "Speaks about marketing topics."
-```
-
-**Good** — distinctive:
-```yaml
-voice: |
-  Brand-first contrarian. Argues against pure-performance ROAS optimization.
-  Uses concrete examples (Chubbies, Liquid Death) to anchor frameworks.
-  Sentences are short and assertive — almost manifesto-style.
-```
-
-### Rule 2 — Multiple sources beat single source
-
-A LinkedIn-only persona produces a thin skill (LinkedIn is full of reposts).
-A persona with LinkedIn + their newsletter RSS + their podcast appearances
-produces a rich skill (3x signal).
-
-Recommended minimum: 2 sources per persona.
-
-### Rule 3 — Don't bloat the skill
-
-Hard cap: 8k tokens. Soft cap: 4k. The judge already filters, and distill
-deduplicates. If your skill is hitting 8k:
-
-- Tighten the `expertise` tags (too broad → judge accepts too much)
-- Sharpen the `voice` description (too generic → false positives)
-- Cap `max_per_section` in `judge/config.yaml`
+**Planned for v1.2:** `reddit_user`, `hackernews`, `arxiv`,
+`readwise_highlights`, podcast RSS with Whisper transcription, Farcaster.
 
 ---
 
 ## Cadence and scheduling
 
-Three options for the cron:
+Three options for auto-refresh:
 
-### GitHub Actions (recommended)
-Copy `deploy/github-actions.yml.template` to `.github/workflows/expert-mind-skill.yml`.
-Add secrets in repo settings. Free for public repos, generous for private.
+### Option 1: "Ask me in chat" (recommended for non-developers)
+No cron at all. Just say *"refresh my skills"* or *"обнови Эрика"* to Claude
+Code, the agent runs `/expert-mind-skill:run`. Zero setup.
 
-### Local launchd (macOS) / systemd (Linux)
-`/expert-mind-skill:init` will generate the unit file and install it. Updates
-happen on YOUR machine, no cloud.
+### Option 2: GitHub Actions
+For users with the plugin checked into a GitHub repo. Copy
+`deploy/github-actions.yml.template` to `.github/workflows/`. Auto-commits
+refreshed skills back. Free for public repos.
 
-### Manual
-Run `/expert-mind-skill:run` (or `python scripts/orchestrator.py`) whenever you want.
+### Option 3: Local launchd (macOS) / systemd (Linux)
+For users who want refresh to keep happening when their machine stays on.
+`/expert-mind-skill:init` will generate the unit file and install it.
 
 ---
 
 ## Cost
 
-Default (Sonnet judge, 16 personas, ~1.5 items/day each, weekly cadence):
+Default config (Sonnet judge, 16 personas, ~1.5 items/day each, weekly cadence):
 
 | Component | Cost/week |
 |---|---|
 | Apify (LinkedIn + X) | ~$1.50 |
 | Anthropic (judge) | ~$1.00 |
 | Anthropic (distill finalize) | ~$0.30 |
-| Other adapters (RSS, YouTube, Mastodon, etc.) | $0 |
+| Other adapters (RSS, YouTube, Mastodon, Telegram, …) | $0 |
 | **Total** | **~$2.80/week** |
 
-Bootstrap (initial pull with 100 posts/persona): ~$15 one-time.
+Bootstrap (initial pull, 100 posts/persona): **~$15 one-time**.
 
-Switch to Haiku for lower cost — set `EXPERT_MIND_JUDGE_MODEL=claude-haiku-4-5`
-to bring weekly cost to ~$0.30.
+Switch to Haiku for ~$0.30/week:
+```bash
+export EXPERT_MIND_JUDGE_MODEL=claude-haiku-4-5
+```
 
 ---
 
@@ -246,57 +296,126 @@ to bring weekly cost to ~$0.30.
 
 ```
 expert-mind-skill/
-├── .claude-plugin/plugin.json    # plugin manifest
-├── commands/                     # slash commands
-│   ├── init.md                   # /expert-mind-skill:init
-│   ├── add-persona.md            # /expert-mind-skill:add-persona
-│   ├── status.md                 # /expert-mind-skill:status
-│   └── run.md                    # /expert-mind-skill:run
-├── skills/                       # 16 bundled expert skills (read-only)
+├── .claude-plugin/
+│   ├── marketplace.json         # marketplace manifest (1 plugin)
+│   └── plugin.json              # plugin manifest
+├── commands/                    # slash commands
+│   ├── init.md                  # /expert-mind-skill:init
+│   ├── add-persona.md           # /expert-mind-skill:add-persona
+│   ├── status.md                # /expert-mind-skill:status
+│   └── run.md                   # /expert-mind-skill:run
+├── skills/                      # 16 bundled expert skills (read-only)
 │   ├── eric-seufert/SKILL.md
 │   └── …
-├── scripts/                      # pipeline (Python)
-│   ├── orchestrator.py           # main entry — ingest → judge → distill
-│   ├── persona_loader.py         # reads personas/*.yaml
-│   ├── scrape_linkedin.py        # Apify-driven LinkedIn ingester
-│   ├── pull_rss.py               # RSS/Atom ingester
-│   ├── judge.py                  # LLM-as-judge scoring
-│   ├── distill.py                # bucket + dedup + voice extraction
-│   └── retry_errors.py           # rate-limit recovery helper
-├── cold-start/registry.yaml      # 16 pre-curated persona templates
-├── hooks/hooks.json              # SessionStart welcome
+├── scripts/                     # pipeline (Python, stdlib only + PyYAML)
+│   ├── orchestrator.py          # main entry — ingest → judge → distill
+│   ├── persona_loader.py        # reads personas/*.yaml
+│   ├── judge.py                 # LLM-as-judge scoring
+│   ├── distill.py               # bucket + dedup + voice extraction
+│   ├── wizard_state.py          # filesystem-driven setup state
+│   ├── scrape_linkedin.py       # Apify-driven LinkedIn ingester
+│   ├── scrape_x.py              # Apify-driven X/Twitter ingester
+│   ├── pull_rss.py              # RSS/Atom ingester
+│   ├── pull_youtube.py          # YouTube channel + transcript ingester
+│   ├── pull_telegram.py         # public Telegram channel scrape
+│   ├── pull_readwise.py         # Readwise Reader API
+│   ├── pull_mastodon.py         # public Mastodon timelines
+│   ├── pull_bluesky.py          # public Bluesky feeds
+│   ├── pull_webfeed.py          # generic URL → plain text
+│   ├── pull_email.py            # IMAP folder
+│   ├── scrape_x_official.py     # X API v2 (alternative to x_apify)
+│   └── import_manual.py         # drop-in .txt files
+├── cold-start/registry.yaml     # 16 pre-curated persona templates
+├── hooks/hooks.json             # SessionStart welcome
 ├── deploy/
-│   └── github-actions.yml.template
-└── README.md
+│   ├── github-actions.yml.template
+│   └── test-workflow.yml.template
+├── calibration_seed.md          # 50 labeled judge examples
+├── SPEC.md                      # full system specification
+└── README.md                    # this file
 ```
 
-After installation, the user creates these in their working directory:
+After installation, you create these in your working directory (gitignored
+by default):
 ```
 your-project/
-├── personas/<id>.yaml            # one file per expert YOU added
-├── .env                          # API keys (gitignored)
-├── output/skills/                # YOUR custom skills (separate from bundled)
-├── logs/<id>.jsonl               # attribution log per persona
-└── staging/                      # cache (gitignored)
+├── personas/<id>.yaml           # one file per expert YOU added
+├── .env                         # API keys (gitignored)
+├── output/skills/<id>/SKILL.md  # YOUR custom skills (alongside bundled)
+├── logs/<id>.jsonl              # attribution log per persona
+└── staging/                     # ingest cache (gitignored)
 ```
 
 ---
 
-## Spec, evaluation, and architecture
+## Adding your own expert (advanced — config files)
 
-- **[SPEC.md](SPEC.md)** — full system specification (v1.1)
-- **[output/EVALUATION_REPORT.md](output/EVALUATION_REPORT.md)** — quality report on the 16 bundled skills (16/16 with usable applicability, avg 2,503 tokens)
-- **[calibration_seed.md](calibration_seed.md)** — 50 labeled examples used to calibrate the LLM judge
+The wizard (`/expert-mind-skill:init`) is the recommended path. But if you
+prefer to edit YAML directly:
+
+1. Create `personas/<your-id>.yaml`:
+   ```yaml
+   id: your-id
+   name: Person Name
+   role: One-line description
+   expertise: [tag1, tag2, tag3]
+   voice: |
+     2-3 sentences describing distinctive speech patterns
+   groups: [marketing, growth]
+   sources:
+     - type: linkedin_apify
+       handle: linkedin-handle
+     - type: rss
+       url: https://their-blog.com/feed.xml
+   cadence: weekly
+   ```
+
+2. Add API keys to `.env` (the wizard does this for you):
+   ```
+   ANTHROPIC_API_KEY=sk-ant-...
+   APIFY_TOKEN=apify_api_...
+   ```
+
+3. Run the pipeline:
+   ```bash
+   python3 scripts/orchestrator.py
+   ```
+
+### Three rules for good personas
+
+**Rule 1: Voice description is the judge's filter.** It's what the judge uses
+to distinguish "this excerpt sounds like our author" vs "generic noise."
+
+- ❌ Generic: *"Speaks about marketing topics."*
+- ✅ Distinctive: *"Brand-first contrarian. Argues against pure-performance
+  ROAS optimization. Uses concrete examples (Chubbies, Liquid Death) to
+  anchor frameworks."*
+
+**Rule 2: Multiple sources beat single source.** LinkedIn-only personas
+produce thin skills (LinkedIn is full of reposts). LinkedIn + newsletter
+RSS + podcast appearances = 3x signal. Recommended minimum: 2 sources.
+
+**Rule 3: Don't bloat the skill.** Hard cap 8k tokens. If hitting 8k:
+- Tighten `expertise` tags (too broad → judge accepts too much)
+- Sharpen `voice` description (too generic → false positives)
+- Reduce `max_per_section` in `judge/config.yaml`
 
 ---
 
-## License
+## Quality & validation
 
-MIT. Forks welcome. PRs to expand `cold-start/registry.yaml` with new authors very welcome.
+- **[output/EVALUATION_REPORT.md](output/EVALUATION_REPORT.md)** — per-persona
+  stats (accepted ratio, tokens, fullness, applicability) across all 16 bundled
+  skills
+- **[calibration_seed.md](calibration_seed.md)** — 50 labeled examples (35
+  YES + 10 NO + 5 BORDERLINE) used to anchor the judge prompt
+- **[SPEC.md](SPEC.md)** — full system architecture
 
 ---
 
 ## Contributing a new expert to the cold-start registry
+
+PRs welcome to expand the 16-persona default set.
 
 1. Fork this repo
 2. Add an entry to `cold-start/registry.yaml`:
@@ -317,3 +436,12 @@ MIT. Forks welcome. PRs to expand `cold-start/registry.yaml` with new authors ve
 3. (Optional) Generate the SKILL.md by running the pipeline against your own
    sources, commit the resulting file to `skills/<persona-id>/SKILL.md`
 4. Open a PR
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on adding new source
+adapters.
+
+---
+
+## License
+
+MIT. Forks welcome. PRs to expand `cold-start/registry.yaml` very welcome.
