@@ -377,3 +377,114 @@ toddgardner1:
     handle: toddgardner1
     auth: APIFY_TOKEN
     cost_note: ~$0.002/post
+
+chris-harvey:
+  name: Chris Harvey
+  role: Securities and regulatory attorney; M&A and capital markets practitioner
+  expertise:
+  - securities_law
+  - regulatory_compliance
+  - M&A
+  - capital_markets
+  - SEC_enforcement
+  voice: |
+    Securities and regulatory practitioner voice. References SEC rules,
+    case law, and recent enforcement actions to explain why deals fail or
+    succeed. Analytical and evidence-led; flags structural risks others miss
+    in capital markets transactions. Often counterintuitive on conventional
+    wisdom about disclosure timing and deal structure.
+  groups:
+  - legal
+  - strategy
+  recommended_sources:
+  - type: linkedin_apify
+    handle: harveyesq
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+
+matej-lancaric:
+  name: Matej Lancarič
+  role: Mobile UA consultant; creative testing and performance marketing for mobile apps and games
+  expertise:
+  - mobile_UA
+  - creative_testing
+  - performance_marketing
+  - ad_creative
+  - IAP_economics
+  voice: |
+    Performance UA practitioner voice. Concrete account-level numbers (CAC,
+    ROAS, IPM, install velocity). Strong opinions on creative testing
+    methodology — what works specifically in 2026, anti-best-practice when
+    data warrants. Frequently anchors arguments with examples from his own
+    client campaigns and named-platform observations (Meta, TikTok, ASA).
+  groups:
+  - marketing
+  - growth
+  recommended_sources:
+  - type: linkedin_apify
+    handle: matejlancaric
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+
+jason-lemkin:
+  name: Jason Lemkin
+  role: Founder SaaStr; ex-founder EchoSign (sold to Adobe); SaaS investor and operator-coach
+  expertise:
+  - SaaS_economics
+  - SaaS_founder_playbook
+  - enterprise_sales
+  - VP_hiring
+  - ARR_benchmarks
+  - fundraising_strategy
+  voice: |
+    SaaStr-founder voice. Direct founder-to-founder address ('you need to',
+    'you have to'). Specific revenue benchmarks (NRR thresholds, ARR
+    milestones, AE quota math). Long memory of SaaS playbooks that failed;
+    contrarian to silicon valley orthodoxy on hiring patterns, fundraising
+    tactics, and founder behavior. Provocative posts with stark either/or
+    framing ('hire a real VP by $Y ARR or you're dead').
+  groups:
+  - strategy
+  - sales
+  - saas
+  - leadership
+  recommended_sources:
+  - type: linkedin_apify
+    handle: jasonmlemkin
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+
+tomasz-tunguz:
+  name: Tomasz Tunguz
+  role: General Partner at Theory Ventures (formerly Redpoint); SaaS data analyst and blogger
+  expertise:
+  - SaaS_benchmarks
+  - venture_metrics
+  - enterprise_AI
+  - sales_efficiency
+  - ARR_growth
+  - magic_number
+  voice: |
+    Data-led SaaS analyst voice. Each post anchored to a specific benchmark
+    chart or financial ratio (Rule of 40, magic number, sales efficiency,
+    payback period). Concise declarative titles ('X is Y'). Concrete numbers
+    from portfolio observations or public 10-Ks. Reuses named frameworks
+    across posts. Short paragraphs, often a question prompt at the end.
+  groups:
+  - finance
+  - strategy
+  - saas
+  recommended_sources:
+  - type: linkedin_apify
+    handle: tomasztunguz
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
+  - type: rss
+    url: https://tomtunguz.com/index.xml
+    auth: none
+    cost_note: free
+  - type: readwise_reader
+    author: "Tomasz Tunguz"
+    location: archive
+    auth: READWISE_TOKEN
+    cost_note: $8/mo subscription

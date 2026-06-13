@@ -198,6 +198,7 @@ def main():
         ("manual_text",     "import_manual.py",   None),
         ("telegram_public", "pull_telegram.py",   None),
         ("readwise_reader", "pull_readwise.py",   "READWISE_TOKEN"),
+        ("notion_snipd",    "pull_notion_snipd.py", "NOTION_READER_TOKEN"),
         ("webfeed",         "pull_webfeed.py",    None),
         ("email_forward",   "pull_email.py",      "IMAP_HOST"),
     ]

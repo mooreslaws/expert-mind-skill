@@ -3,9 +3,13 @@
 
 Source entry shape in personas/<id>.yaml:
   - type: readwise_reader
-    tag: "eric-seufert"          # filter by Reader tag
-    location: "shortlist"        # one of: shortlist (default), later, archive, feed
+    tag: "eric-seufert"          # filter by Reader tag (optional)
+    author: "Tomasz Tunguz"      # filter by exact author match (optional)
+    location: "shortlist"        # one of: shortlist (default), later, archive, feed, new
     max_items: 100               # optional, default 100
+
+`tag` and `author` are both optional and ANDed when both are present. If
+neither is set, all items in `location` are returned (rarely what you want).
 
 Saves: staging/raw/readwise/<persona_id>.json
 
@@ -46,10 +50,18 @@ def _api_get(path: str, params: dict | None = None) -> dict:
         return json.load(r)
 
 
-def fetch_documents(tag: str | None, location: str, max_items: int) -> list[dict]:
-    """Paginate through Readwise Reader documents in `location`, filtered by tag."""
+def fetch_documents(tag: str | None, author: str | None, location: str,
+                    max_items: int) -> list[dict]:
+    """Paginate through Readwise Reader documents in `location`.
+
+    Filters are applied client-side (the API has no native author filter):
+      - tag: case-insensitive exact tag match
+      - author: case-insensitive substring match on the author field
+    """
     docs = []
     cursor = None
+    tag_lower = tag.lower() if tag else None
+    author_lower = author.lower() if author else None
     while len(docs) < max_items:
         params = {"location": location}
         if cursor:
@@ -59,11 +71,15 @@ def fetch_documents(tag: str | None, location: str, max_items: int) -> list[dict
         except urllib.error.HTTPError as e:
             raise RuntimeError(f"Readwise API {e.code}: {e.read().decode()[:200]}") from e
         results = page.get("results", [])
-        if tag:
-            tag_lower = tag.lower()
+        if tag_lower:
             results = [
                 d for d in results
                 if any(t.lower() == tag_lower for t in (d.get("tags") or {}).keys())
+            ]
+        if author_lower:
+            results = [
+                d for d in results
+                if author_lower in (d.get("author") or "").lower()
             ]
         docs.extend(results)
         cursor = page.get("nextPageCursor")
@@ -94,6 +110,7 @@ def main():
         targets.append((
             p["id"],
             src.get("tag"),
+            src.get("author"),
             src.get("location", "shortlist"),
             int(src.get("max_items", 100)),
         ))
@@ -102,14 +119,18 @@ def main():
         print("[done] no readwise_reader sources.")
         return
 
-    for persona_id, tag, location, max_items in targets:
+    for persona_id, tag, author, location, max_items in targets:
         try:
-            docs = fetch_documents(tag=tag, location=location, max_items=max_items)
+            docs = fetch_documents(tag=tag, author=author, location=location,
+                                   max_items=max_items)
             items = [normalize(d) for d in docs]
             (STAGING / f"{persona_id}.json").write_text(
                 json.dumps(items, indent=2, ensure_ascii=False)
             )
-            label = f"tag={tag}, " if tag else ""
+            label_parts = []
+            if tag: label_parts.append(f"tag={tag}")
+            if author: label_parts.append(f"author={author}")
+            label = ", ".join(label_parts) + (", " if label_parts else "")
             print(f"  [done] {persona_id} ({label}location={location}): {len(items)} docs")
         except Exception as e:
             print(f"  [fail] {persona_id}: {e}")

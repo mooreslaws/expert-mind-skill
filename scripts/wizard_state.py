@@ -108,6 +108,7 @@ SOURCE_AUTH_MAP = {
     "x_official": "X_BEARER_TOKEN",      # alternative: X API v2, needs Basic+ tier ($100/mo)
     "readwise_reader": "READWISE_TOKEN",
     "readwise_highlights": "READWISE_TOKEN",
+    "notion_snipd": "NOTION_READER_TOKEN",   # Snipd→Readwise→Notion pipeline; reader-scoped integration
 
     # Advanced
     "email_forward": "IMAP_HOST",    # also needs IMAP_USER + IMAP_PASS — adapter validates at runtime
