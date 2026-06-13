@@ -1,6 +1,6 @@
 # Expert Mind Skill
 
-> **A rotating circle of 16 named experts living inside your Claude Code.**
+> **A rotating circle of 20 named experts living inside your Claude Code.**
 > Mention an expert by name, by domain, or by group — Claude answers through
 > their frameworks, principles, and voice. Auto-refreshes weekly from
 > LinkedIn, RSS, YouTube, podcasts.
@@ -88,7 +88,7 @@ relevant prior thinking.
 
 ## Two install paths
 
-### Path A — Just use the 16 bundled experts (zero config)
+### Path A — Just use the 20 bundled experts (zero config)
 
 ```bash
 # Inside Claude Code
@@ -96,7 +96,7 @@ relevant prior thinking.
 /plugin install expert-mind-skill@expert-mind-skill
 ```
 
-Done. All 16 experts are now active. **No API keys, no setup, no coding.**
+Done. All 20 experts are now active. **No API keys, no setup, no coding.**
 Mention any of them and they activate.
 
 ### Path B — Add your own experts (interactive wizard)
@@ -110,7 +110,7 @@ wizard asks plain questions:
 
 ```
 ✅ LLM provider configured? (if not, paste an Anthropic API key)
-✅ Which experts to add? (pick from 16 presets, or define your own)
+✅ Which experts to add? (pick from 20 presets, or define your own)
 ✅ Which sources to pull from? (LinkedIn, RSS, X, YouTube, podcasts, …)
 ✅ Setup auto-refresh? (weekly cron, manual, or "just ping me in chat")
 ✅ Run the pipeline now?
@@ -140,7 +140,7 @@ Available groups: `marketing`, `product`, `strategy`, `ai`, `finance`,
 
 ---
 
-## What's in the box (16 bundled experts)
+## What's in the box (20 bundled experts)
 
 Each skill: ~2-3k tokens of frameworks + principles + opinions + voice samples,
 distilled from 80-120 LinkedIn/RSS/YouTube items per author.
@@ -163,9 +163,13 @@ distilled from 80-120 LinkedIn/RSS/YouTube items per author.
 | `dawidprokopowicz` | Dawid Prokopowicz | Mobile growth |
 | `vkalmykov` | V. Kalmykov | Mobile growth |
 | `mikolajbarczentewicz` | Mikolaj Barczentewicz | Mobile growth + product |
+| `tomasz-tunguz` | Tomasz Tunguz | SaaS benchmarks, venture metrics |
+| `jason-lemkin` | Jason Lemkin | SaaStr founder playbook, enterprise sales |
+| `matej-lancaric` | Matej Lancarič | Mobile UA, creative testing |
+| `chris-harvey` | Chris Harvey | Securities & regulatory law |
 
 Quality report: [output/EVALUATION_REPORT.md](output/EVALUATION_REPORT.md)
-(16/16 with usable applicability, avg 2,503 tokens, 0 fair-applicability).
+(20/20 with usable applicability, 0 fair-applicability).
 
 ---
 
@@ -237,7 +241,8 @@ All 12 adapters are **implemented**. Each is a single Python file in `scripts/`.
 | `telegram_public` | none | free | Public TG channels via `t.me/s/` HTML scrape |
 | `mastodon` | none | free | Public Mastodon timelines |
 | `bluesky` | none | free | Public Bluesky feeds |
-| `readwise_reader` | `READWISE_TOKEN` | $8/mo subscription | Your saved Reader articles, filtered by tag |
+| `readwise_reader` | `READWISE_TOKEN` | $8/mo subscription | Your saved Reader articles, filtered by tag or author |
+| `notion_snipd` | `NOTION_READER_TOKEN` | free | Snipd→Readwise→Notion podcast snippets, filtered by show title. Good for recurring podcast guests |
 | `email_forward` | `IMAP_HOST` + `IMAP_USER` + `IMAP_PASS` | free | IMAP folder of forwarded newsletters |
 | `webfeed` | none | free | Single web URL → plain text (naive readability) |
 | `manual_text` | none | free | Drop `.txt` files in `staging/raw/manual/<persona_id>/` |
@@ -273,7 +278,7 @@ For users who want refresh to keep happening when their machine stays on.
 
 ## Cost
 
-Default config (Sonnet judge, 16 personas, ~1.5 items/day each, weekly cadence):
+Default config (Sonnet judge, 20 personas, ~1.5 items/day each, weekly cadence):
 
 | Component | Cost/week |
 |---|---|
@@ -304,7 +309,7 @@ expert-mind-skill/
 │   ├── add-persona.md           # /expert-mind-skill:add-persona
 │   ├── status.md                # /expert-mind-skill:status
 │   └── run.md                   # /expert-mind-skill:run
-├── skills/                      # 16 bundled expert skills (read-only)
+├── skills/                      # 20 bundled expert skills (read-only)
 │   ├── eric-seufert/SKILL.md
 │   └── …
 ├── scripts/                     # pipeline (Python, stdlib only + PyYAML)
@@ -325,7 +330,7 @@ expert-mind-skill/
 │   ├── pull_email.py            # IMAP folder
 │   ├── scrape_x_official.py     # X API v2 (alternative to x_apify)
 │   └── import_manual.py         # drop-in .txt files
-├── cold-start/registry.yaml     # 16 pre-curated persona templates
+├── cold-start/registry.yaml     # 20 pre-curated persona templates
 ├── hooks/hooks.json             # SessionStart welcome
 ├── deploy/
 │   ├── github-actions.yml.template
@@ -405,7 +410,7 @@ RSS + podcast appearances = 3x signal. Recommended minimum: 2 sources.
 ## Quality & validation
 
 - **[output/EVALUATION_REPORT.md](output/EVALUATION_REPORT.md)** — per-persona
-  stats (accepted ratio, tokens, fullness, applicability) across all 16 bundled
+  stats (accepted ratio, tokens, fullness, applicability) across all 20 bundled
   skills
 - **[calibration_seed.md](calibration_seed.md)** — 50 labeled examples (35
   YES + 10 NO + 5 BORDERLINE) used to anchor the judge prompt
