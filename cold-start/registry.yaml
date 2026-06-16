@@ -488,3 +488,29 @@ tomasz-tunguz:
     location: archive
     auth: READWISE_TOKEN
     cost_note: $8/mo subscription
+
+paul-levchuk:
+  name: Paul Levchuk
+  role: Product & marketing analytics practitioner; retention, cohorts, LTV for mobile apps
+  expertise:
+  - product_analytics
+  - retention_analysis
+  - cohort_analysis
+  - LTV_modeling
+  - marketing_analytics
+  - attribution
+  voice: |
+    Analytics-practitioner voice. Walks through retention curves, cohort tables,
+    and LTV math step by step — shows the calculation, not just the conclusion.
+    Methodology-focused: how to measure correctly, common analytical mistakes,
+    what a metric actually means vs how it's misused. Concrete chart-driven
+    examples. Skeptical of vanity metrics and surface-level dashboards.
+  groups:
+  - product
+  - marketing
+  - growth
+  recommended_sources:
+  - type: linkedin_apify
+    handle: paullevchuk
+    auth: APIFY_TOKEN
+    cost_note: ~$0.002/post
