@@ -525,7 +525,7 @@ tomasz-tunguz:
 
 paul-levchuk:
   name: Paul Levchuk
-  role: Product & marketing analytics: retention, LTV, causal inference
+  role: 'Product & marketing analytics: retention, LTV, causal inference'
   expertise:
   - retention_cohort_analysis
   - ltv_modeling
