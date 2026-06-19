@@ -131,7 +131,7 @@ you already have configured and only asks what's missing.
 | **By group** | *"Through growth experts lens — should we launch referral?"* | All experts in that group |
 
 Available groups: `marketing`, `product`, `strategy`, `ai`, `finance`,
-`leadership`, `design`, `sales`. Each expert is tagged with 1-3 groups.
+`leadership`, `design`, `sales`, `growth`, `saas`, `legal`. Each expert is tagged with 1-3 groups.
 
 **For parallel side-by-side answers** (no synthesis), say so explicitly:
 
@@ -148,26 +148,26 @@ distilled from 80-120 LinkedIn/RSS/YouTube items per author.
 | ID | Persona | Domain |
 |---|---|---|
 | `eric-seufert` | Eric Seufert | Mobile ad economics, ATT, AI distribution |
-| `elena-verna` | Elena Verna | PLG, growth loops, retention |
-| `andrew-chen` | Andrew Chen | Growth marketing, network effects |
-| `anish-acharya` | Anish Acharya | Consumer fintech, AI investing |
+| `elena-verna` | Elena Verna | Monetization, PLG & AI-era growth strategy |
+| `andrew-chen` | Andrew Chen | AI product strategy, growth & startup investing |
+| `anish-acharya` | Anish Acharya | AI-native product strategy & consumer fintech VC |
 | `rory-odriscoll` | Rory O'Driscoll | SaaS economics, public markets |
-| `toddgardner1` | Todd Gardner | Bootstrapped SaaS, dev-tools marketing |
+| `toddgardner1` | Todd Gardner | SaaS finance, unit economics & pricing strategy |
 | `prestonr` | Preston Rutherford | DTC brand, anti-ROAS-only |
 | `marcusburke` | Marcus Burke | Meta ads, value rules |
-| `jacob-rushfinn` | Jacob Rushfinn | Mobile UA, creatives |
-| `janvoss93` | Jan Voss | Paid UA, ASO |
-| `dangjr` | Dan G Jr | Mobile growth |
-| `sylvaingauchet` | Sylvain Gauchet | Growth Gems curation |
-| `fazlurshah` | Fazlur Shah | Subscription apps |
-| `dawidprokopowicz` | Dawid Prokopowicz | Mobile growth |
-| `vkalmykov` | V. Kalmykov | Mobile growth |
-| `mikolajbarczentewicz` | Mikolaj Barczentewicz | Mobile growth + product |
-| `tomasz-tunguz` | Tomasz Tunguz | SaaS benchmarks, venture metrics |
-| `jason-lemkin` | Jason Lemkin | SaaStr founder playbook, enterprise sales |
+| `jacob-rushfinn` | Jacob Rushfinn | Mobile subscription monetization, paywalls & activation |
+| `janvoss93` | Jan Voss | Angel investing, VC & wealth management |
+| `dangjr` | Dan G Jr | Venture capital theory & early-stage investing |
+| `sylvaingauchet` | Sylvain Gauchet | Mobile growth & subscription app monetization |
+| `fazlurshah` | Fazlur Shah | Startup fundraising & SaaS unit economics |
+| `dawidprokopowicz` | Dawid Prokopowicz | Sports marketing & fan engagement strategy |
+| `vkalmykov` | V. Kalmykov | Product management craft & PM career |
+| `mikolajbarczentewicz` | Mikolaj Barczentewicz | Tech & privacy regulation / digital platform law |
+| `tomasz-tunguz` | Tomasz Tunguz | AI's impact on SaaS economics & venture metrics |
+| `jason-lemkin` | Jason Lemkin | SaaS valuation multiples, venture returns & AI capital-allocation dynamics |
 | `matej-lancaric` | Matej Lancarič | Mobile UA, creative testing |
-| `chris-harvey` | Chris Harvey | Securities & regulatory law |
-| `paul-levchuk` | Paul Levchuk | Product/retention analytics, cohorts, LTV |
+| `chris-harvey` | Chris Harvey | VC fund formation & startup financing law |
+| `paul-levchuk` | Paul Levchuk | Product & marketing analytics: retention, LTV, causal inference |
 
 Quality report: [output/EVALUATION_REPORT.md](output/EVALUATION_REPORT.md)
 (21/21 with usable applicability, 0 fair-applicability).

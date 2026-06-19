@@ -34,20 +34,22 @@ eric-seufert:
     cost_note: free
 elena-verna:
   name: Elena Verna
-  role: Growth advisor (ex-SurveyMonkey, MongoDB, Miro); product-led growth specialist
+  role: Growth advisor; monetization, PLG & AI-era growth strategy
   expertise:
   - product_led_growth
-  - growth_loops
+  - monetization_pricing
   - retention
-  - self_serve
+  - ai_era_growth
+  - distribution_trust
+  - pmf
   voice: 'PLG zealot, framework-driven, contrarian on outbound.
 
     Anti-vanity-metric; explicit about what doesn''t work.
 
     '
   groups:
-  - product
   - growth
+  - product
   - marketing
   - strategy
   recommended_sources:
@@ -65,23 +67,24 @@ elena-verna:
     cost_note: ~$0.003/tweet
 andrew-chen:
   name: Andrew Chen
-  role: GP at a16z; growth marketing thought leader
+  role: General Partner at a16z; AI product strategy, growth & startup investing
   expertise:
+  - ai_product_strategy
   - growth_marketing
-  - consumer_products
-  - metrics
-  - marketplace_dynamics
+  - venture_capital
+  - startup_strategy
   - network_effects
+  - unit_economics
   voice: 'Essay-writer, network-effects framing, classic Silicon Valley product playbooks.
 
     Mixes own experience with synthesis of others'' work.
 
     '
   groups:
+  - ai
   - growth
-  - marketing
-  - product
   - strategy
+  - product
   recommended_sources:
   - type: rss
     url: https://andrewchen.com/feed/
@@ -97,11 +100,14 @@ andrew-chen:
     cost_note: ~$0.003/tweet
 anish-acharya:
   name: Anish Acharya
-  role: GP at a16z; consumer fintech & AI investor
+  role: General Partner at a16z; AI-native product strategy & consumer fintech VC
   expertise:
+  - ai_native_products
+  - venture_strategy
   - consumer_fintech
-  - AI_applications
-  - venture_investing
+  - foundation_model_competition
+  - ai_product_management
+  - software_economics
   voice: 'Thesis-driven investor takes, AI/consumer crossover.
 
     Sharp one-liners that compress arguments.
@@ -110,8 +116,8 @@ anish-acharya:
   groups:
   - ai
   - strategy
-  - finance
   - product
+  - finance
   recommended_sources:
   - type: linkedin_apify
     handle: anishacharya
@@ -197,18 +203,21 @@ marcusburke:
     cost_note: ~$0.002/post
 jacob-rushfinn:
   name: Jacob Rushfinn
-  role: Mobile growth / user acquisition operator
+  role: Mobile subscription monetization, paywalls & activation
   expertise:
-  - paid_UA
-  - creatives
-  - mobile_attribution
+  - subscription_monetization
+  - paywall_optimization
+  - pricing_packaging
+  - user_activation
+  - onboarding_conversion
+  - mobile_app_growth
   voice: 'Hands-on operator perspective. Specific tactics over abstract frameworks.
 
     '
   groups:
+  - growth
+  - product
   - marketing
-  - mobile
-  - paid_ua
   recommended_sources:
   - type: linkedin_apify
     handle: jacob-rushfinn
@@ -216,20 +225,23 @@ jacob-rushfinn:
     cost_note: ~$0.002/post
 janvoss93:
   name: Jan Voss
-  role: Mobile growth marketer
+  role: Angel investing, VC & wealth management
   expertise:
-  - paid_UA
-  - ASO
-  - creative_strategy
+  - angel_investing
+  - venture_capital
+  - wealth_management
+  - due_diligence
+  - family_offices
+  - exit_liquidity
   voice: 'Tactical, screenshot-driven, real numbers.
 
     Walks through screenshots of ad accounts and creatives.
 
     '
   groups:
-  - marketing
-  - mobile
-  - paid_ua
+  - finance
+  - strategy
+  - leadership
   recommended_sources:
   - type: linkedin_apify
     handle: janvoss93
@@ -237,17 +249,20 @@ janvoss93:
     cost_note: ~$0.002/post
 dangjr:
   name: Dan G Jr
-  role: Mobile growth practitioner
+  role: Venture capital theory & early-stage investing
   expertise:
-  - mobile_growth
-  - paid_UA
+  - venture_capital
+  - early_stage_investing
+  - fund_economics
+  - vc_diversification
+  - deal_flow
+  - startup_capital_efficiency
   voice: 'Operator-style; tests and learnings shared from the trenches.
 
     '
   groups:
-  - marketing
-  - mobile
-  - paid_ua
+  - finance
+  - strategy
   recommended_sources:
   - type: linkedin_apify
     handle: dangjr
@@ -255,21 +270,23 @@ dangjr:
     cost_note: ~$0.002/post
 sylvaingauchet:
   name: Sylvain Gauchet
-  role: Growth Gems Chief Insights Miner; mobile growth advisor
+  role: Growth Gems curator; mobile growth & subscription app monetization
   expertise:
-  - mobile_growth_synthesis
-  - creative_strategy
-  - monetization
-  - PR
+  - subscription_monetization
+  - paywall_strategy
+  - ua_creative_strategy
+  - mobile_growth
+  - user_activation
+  - mobile_unit_economics
   voice: 'Curatorial, framework-oriented; picks principles from peers and extends them.
 
     Mostly synthesizes others'' work — primary value is the curation lens.
 
     '
   groups:
-  - marketing
-  - mobile
   - growth
+  - marketing
+  - product
   recommended_sources:
   - type: rss
     url: https://growthgems.substack.com/feed
@@ -281,19 +298,21 @@ sylvaingauchet:
     cost_note: ~$0.002/post
 fazlurshah:
   name: Fazlur Shah
-  role: Mobile growth practitioner
+  role: Startup fundraising & SaaS unit-economics advisor
   expertise:
-  - mobile_growth
-  - subscription_apps
-  - paid_UA
-  - ASO
+  - startup_fundraising
+  - cap_table
+  - venture_capital
+  - unit_economics
+  - term_sheets
+  - saas_metrics
   voice: 'Practical, data-driven, tactical. Case-study heavy.
 
     '
   groups:
-  - marketing
-  - mobile
-  - paid_ua
+  - finance
+  - strategy
+  - saas
   recommended_sources:
   - type: linkedin_apify
     handle: fazlurshah
@@ -301,17 +320,20 @@ fazlurshah:
     cost_note: ~$0.002/post
 dawidprokopowicz:
   name: Dawid Prokopowicz
-  role: Mobile growth practitioner
+  role: Sports marketing & fan-engagement strategist
   expertise:
-  - mobile_growth
-  - paid_UA
+  - sports_marketing
+  - brand_sponsorship
+  - fan_engagement
+  - sports_media
+  - creator_marketing
+  - brand_storytelling
   voice: 'Operator perspective; tactical insights from day-to-day campaign management.
 
     '
   groups:
   - marketing
-  - mobile
-  - paid_ua
+  - strategy
   recommended_sources:
   - type: linkedin_apify
     handle: dawidprokopowicz
@@ -319,15 +341,22 @@ dawidprokopowicz:
     cost_note: ~$0.002/post
 vkalmykov:
   name: V. Kalmykov
-  role: Mobile growth practitioner
+  role: Product management craft & PM-career writer
   expertise:
-  - mobile_growth
+  - product_management
+  - product_strategy
+  - pm_career
+  - ab_testing
+  - technical_fluency
+  - ai_in_product
   voice: 'Operator perspective; experiments and learnings.
 
     '
   groups:
-  - marketing
-  - mobile
+  - product
+  - strategy
+  - leadership
+  - ai
   recommended_sources:
   - type: linkedin_apify
     handle: vkalmykov
@@ -335,17 +364,21 @@ vkalmykov:
     cost_note: ~$0.002/post
 mikolajbarczentewicz:
   name: Mikolaj Barczentewicz
-  role: Mobile growth / product
+  role: Tech & privacy regulation / digital-platform law expert
   expertise:
-  - mobile_growth
-  - product
+  - privacy_law
+  - data_protection_gdpr
+  - platform_regulation
+  - ai_governance
+  - tech_policy
+  - competition_regulation
   voice: 'Operator perspective; mixes growth tactics with product thinking.
 
     '
   groups:
-  - marketing
-  - mobile
-  - product
+  - legal
+  - strategy
+  - ai
   recommended_sources:
   - type: linkedin_apify
     handle: mikolajbarczentewicz
@@ -353,13 +386,14 @@ mikolajbarczentewicz:
     cost_note: ~$0.002/post
 toddgardner1:
   name: Todd Gardner
-  role: Founder Request Metrics (ex-TrackJS); bootstrapped SaaS operator, dev-tools marketing
+  role: Founder Request Metrics (ex-TrackJS); SaaS finance, unit economics & pricing
   expertise:
+  - saas_unit_economics
+  - saas_pricing
+  - saas_valuation
+  - saas_finance
+  - revenue_forecasting
   - bootstrapped_saas
-  - dev_tools_marketing
-  - indie_hacking
-  - saas_sales
-  - developer_marketing
   voice: 'Bootstrapper-operator voice. Tactical, no-fluff, often contrarian to VC playbook.
 
     Specific examples from running Request Metrics / TrackJS. Skeptical of growth-hacking trends.
@@ -368,10 +402,9 @@ toddgardner1:
 
     '
   groups:
-  - marketing
+  - finance
   - saas
   - strategy
-  - sales
   recommended_sources:
   - type: linkedin_apify
     handle: toddgardner1
@@ -380,13 +413,14 @@ toddgardner1:
 
 chris-harvey:
   name: Chris Harvey
-  role: Securities and regulatory attorney; M&A and capital markets practitioner
+  role: Securities attorney; VC fund formation & startup financing law
   expertise:
-  - securities_law
+  - fund_formation
+  - venture_capital_law
+  - securities_regulation
+  - lp_gp_structuring
+  - startup_financing
   - regulatory_compliance
-  - M&A
-  - capital_markets
-  - SEC_enforcement
   voice: |
     Securities and regulatory practitioner voice. References SEC rules,
     case law, and recent enforcement actions to explain why deals fail or
@@ -395,7 +429,7 @@ chris-harvey:
     wisdom about disclosure timing and deal structure.
   groups:
   - legal
-  - strategy
+  - finance
   recommended_sources:
   - type: linkedin_apify
     handle: harveyesq
@@ -428,14 +462,14 @@ matej-lancaric:
 
 jason-lemkin:
   name: Jason Lemkin
-  role: Founder SaaStr; ex-founder EchoSign (sold to Adobe); SaaS investor and operator-coach
+  role: Founder SaaStr; SaaS valuation multiples, venture returns & AI capital allocation
   expertise:
-  - SaaS_economics
-  - SaaS_founder_playbook
-  - enterprise_sales
-  - VP_hiring
-  - ARR_benchmarks
-  - fundraising_strategy
+  - saas_economics
+  - valuation_multiples
+  - venture_returns
+  - saas_founder_playbook
+  - ai_investing_dynamics
+  - arr_benchmarks
   voice: |
     SaaStr-founder voice. Direct founder-to-founder address ('you need to',
     'you have to'). Specific revenue benchmarks (NRR thresholds, ARR
@@ -444,10 +478,9 @@ jason-lemkin:
     tactics, and founder behavior. Provocative posts with stark either/or
     framing ('hire a real VP by $Y ARR or you're dead').
   groups:
-  - strategy
-  - sales
   - saas
-  - leadership
+  - finance
+  - strategy
   recommended_sources:
   - type: linkedin_apify
     handle: jasonmlemkin
@@ -456,14 +489,14 @@ jason-lemkin:
 
 tomasz-tunguz:
   name: Tomasz Tunguz
-  role: General Partner at Theory Ventures (formerly Redpoint); SaaS data analyst and blogger
+  role: General Partner at Theory Ventures; AI impact on SaaS economics & venture metrics
   expertise:
-  - SaaS_benchmarks
+  - enterprise_ai
+  - ai_agents
+  - saas_economics
   - venture_metrics
-  - enterprise_AI
-  - sales_efficiency
-  - ARR_growth
-  - magic_number
+  - ai_unit_economics
+  - capital_markets
   voice: |
     Data-led SaaS analyst voice. Each post anchored to a specific benchmark
     chart or financial ratio (Rule of 40, magic number, sales efficiency,
@@ -471,9 +504,10 @@ tomasz-tunguz:
     from portfolio observations or public 10-Ks. Reuses named frameworks
     across posts. Short paragraphs, often a question prompt at the end.
   groups:
+  - ai
+  - saas
   - finance
   - strategy
-  - saas
   recommended_sources:
   - type: linkedin_apify
     handle: tomasztunguz
@@ -491,14 +525,14 @@ tomasz-tunguz:
 
 paul-levchuk:
   name: Paul Levchuk
-  role: Product & marketing analytics practitioner; retention, cohorts, LTV for mobile apps
+  role: Product & marketing analytics: retention, LTV, causal inference
   expertise:
-  - product_analytics
-  - retention_analysis
-  - cohort_analysis
-  - LTV_modeling
-  - marketing_analytics
-  - attribution
+  - retention_cohort_analysis
+  - ltv_modeling
+  - causal_inference
+  - churn_prediction
+  - ua_roas_analytics
+  - ab_test_design
   voice: |
     Analytics-practitioner voice. Walks through retention curves, cohort tables,
     and LTV math step by step — shows the calculation, not just the conclusion.
